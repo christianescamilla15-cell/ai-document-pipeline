@@ -1,0 +1,23 @@
+SERVICE AGREEMENT
+
+This Service Agreement ("Agreement") is entered into as of January 15, 2026, by and between TechSolutions Inc. ("Provider") and MexiCorp S.A. de C.V. ("Client").
+
+1. SCOPE OF SERVICES
+The Provider shall deliver software development services including: custom web application development, API integration, database design, and ongoing maintenance support. All deliverables shall meet industry-standard quality benchmarks.
+
+2. COMPENSATION
+Client agrees to pay Provider a monthly retainer of $15,000 USD, due on the first business day of each month. Late payments shall incur a penalty of 1.5% per month.
+
+3. TERM AND TERMINATION
+This Agreement shall commence on January 15, 2026, and continue for twelve (12) months. Either party may terminate with 30 days written notice. Early termination by Client requires payment of remaining contract value at 50%.
+
+4. CONFIDENTIALITY
+Both parties agree to maintain strict confidentiality of proprietary information. Breach of confidentiality shall result in liability for damages and immediate termination.
+
+5. INDEMNIFICATION
+Each party shall indemnify the other against claims arising from negligence or breach of this Agreement. Maximum liability shall not exceed the total contract value.
+
+6. INTELLECTUAL PROPERTY
+All work product created under this Agreement shall be the exclusive property of the Client upon full payment. Provider retains no rights to deliverables.
+
+AGREED AND EXECUTED on the date first written above.

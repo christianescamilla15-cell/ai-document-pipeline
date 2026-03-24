@@ -1,0 +1,27 @@
+QUARTERLY FINANCIAL REPORT - Q4 2025
+
+EXECUTIVE SUMMARY
+The company achieved strong growth in Q4 2025, with revenue increasing 23% year-over-year to $4.2 million. Operating margins improved to 18%, driven by operational efficiency gains and successful product launches.
+
+KEY METRICS
+- Revenue: $4.2M (+23% YoY)
+- Gross Margin: 62% (+3pp)
+- Operating Margin: 18% (+5pp)
+- Customer Acquisition: 340 new clients
+- Retention Rate: 94%
+- Employee Count: 127 (+15 net)
+
+HIGHLIGHTS
+The launch of our AI-powered analytics platform exceeded expectations, generating $800K in new revenue. Customer satisfaction scores reached an all-time high of 4.7/5.0. International expansion into Brazil and Colombia contributed 12% of total revenue.
+
+RISKS AND CONCERNS
+Market competition is intensifying in the enterprise segment. Two major competitors launched similar products at lower price points. Currency fluctuation in Latin American markets poses a moderate financial risk. The deadline for regulatory compliance with new data protection laws is March 2026.
+
+OUTLOOK
+We project Q1 2026 revenue of $4.8M based on current pipeline and seasonal trends. Key initiatives include expanding the AI product suite, entering the Chilean market, and achieving SOC2 Type II certification.
+
+RECOMMENDATIONS
+1. Accelerate AI product development to maintain competitive advantage
+2. Implement hedging strategy for LATAM currency exposure
+3. Prioritize SOC2 certification before the March deadline
+4. Increase sales team capacity by 20% to support growth targets
