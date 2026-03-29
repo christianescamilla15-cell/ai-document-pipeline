@@ -1,66 +1,94 @@
-# AI Document Intelligence Pipeline
+# AI Document Pipeline
 
-Multi-agent document analysis system built with **CrewAI**, **MCP (Model Context Protocol)**, and **FastAPI**.
+Multi-agent document intelligence workflow for extraction, analysis, summarization, and review.
 
-## Architecture
+## Overview
+AI Document Pipeline is a document analysis system that processes uploaded files through a multi-agent workflow using CrewAI, MCP, FastAPI, and local NLP fallbacks.
 
-```
-Document Upload → Text Extraction → Multi-Agent Analysis → Report Generation
-                                          │
-                    ┌─────────────────────┼─────────────────────┐
-                    │                     │                     │
-              Researcher            Analyzer              Writer
-              (MCP tools)      (Keywords/Sentiment)    (Summarization)
-                    │                     │                     │
-                    └─────────────────────┼─────────────────────┘
-                                          │
-                                      Reviewer
-                                   (QA + Risk Flags)
-```
+## Problem
+Document-heavy workflows are slow when analysis, summarization, and QA depend on manual review. Teams need automated extraction and structured output.
 
-### Key Components
+## Solution
+This project routes document content through specialized agents for:
+- Research and context gathering
+- Deep analysis and entity extraction
+- Report writing and summarization
+- Quality assurance and review
 
-- **CrewAI Orchestration** — 4 specialized agents (Researcher, Analyzer, Writer, Reviewer) collaborate sequentially
-- **MCP Servers** — Filesystem and Database servers expose documents/data as resources for AI agents
-- **NLP Tools** — Keyword extraction (TF-based), sentiment analysis, extractive summarization, risk detection
-- **FastAPI** — REST API for document CRUD and analysis pipeline
-- **Dual Mode** — Full AI analysis with Anthropic API key, or local NLP fallback without
+## System Architecture
 
-## Quick Start
-
-```bash
-# Install
-pip install -e ".[dev]"
-
-# Configure (optional — works without API key in local mode)
-cp .env.example .env
-# Add ANTHROPIC_API_KEY for full CrewAI mode
-
-# Run
-uvicorn src.main:app --reload
-
-# Test
-pytest tests/ -v
+```text
+Document Upload
+      ↓
+Text Extraction
+      ↓
+Multi-Agent Analysis Pipeline
+ ├ Researcher Agent
+ ├ Analyzer Agent
+ ├ Writer Agent
+ └ Reviewer Agent
+      ↓
+MCP Servers (Filesystem + SQLite)
+      ↓
+Structured Report Output
 ```
 
-## API Endpoints
+## Key Components
+- CrewAI orchestration for 4 specialized agents
+- 2 MCP servers (Filesystem + SQLite)
+- FastAPI backend
+- NLP utilities for local processing
+- Local fallback path when API unavailable
+- Sample documents + test suite
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/api/health` | Health check + feature list |
-| POST | `/api/documents/` | Upload a document |
-| GET | `/api/documents/` | List all documents |
-| GET | `/api/documents/{id}` | Get document by ID |
-| DELETE | `/api/documents/{id}` | Delete document |
-| POST | `/api/analysis/analyze` | Upload + analyze in one step |
-| POST | `/api/analysis/analyze/{id}` | Analyze existing document |
+## Engineering Decisions
 
-## Docker
+### Why CrewAI?
+To orchestrate multiple specialized agents with clear role definitions and task delegation.
 
-```bash
-docker-compose up --build
-```
+### Why MCP servers?
+To give agents tool access to the filesystem and database without tight coupling.
+
+### Why local fallback?
+To ensure the pipeline works even when external API providers are unavailable.
 
 ## Tech Stack
+| Layer | Technology |
+|-------|-----------|
+| Orchestration | CrewAI |
+| Tool Servers | MCP (Filesystem + SQLite) |
+| Backend | Python, FastAPI |
+| Frontend | React |
+| Infra | Docker, Docker Compose |
+| Testing | pytest (44 tests) |
 
-Python 3.11+ · FastAPI · CrewAI · MCP · Pydantic v2 · SQLite · pytest
+## Repo Structure
+```
+src/              # Core pipeline logic
+tests/            # 44 automated tests
+frontend/         # React UI
+data/sample_documents/  # Test documents
+```
+
+## Key Metrics
+| Metric | Value |
+|--------|-------|
+| Specialized Agents | 4 |
+| MCP Servers | 2 |
+| Tests | 44 |
+| Commits | 3 |
+
+## How to Run
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+## Roadmap
+- [ ] Richer evaluation dataset
+- [ ] Retrieval benchmarking
+- [ ] Document type expansion
+- [ ] Observability for analysis stages
+
+---
+Built by [Christian Hernandez](https://ch65-portfolio.vercel.app) · AI Engineer
